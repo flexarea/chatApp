@@ -66,7 +66,24 @@ sm:px-10
 "
       >
         <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
-          <Input />
+          {/*if variant is equal to register then render the component bellow*/}
+          {variant === "REGISTER" && (
+            <Input id="name" label="name" register={register} errors={errors} />
+          )}
+          <Input
+            id="email"
+            label="Email address"
+            type="email"
+            register={register}
+            errors={errors}
+          />
+          <Input
+            id="password"
+            label="Password"
+            type="password"
+            register={register}
+            errors={errors}
+          />
         </form>
       </div>
     </div>
