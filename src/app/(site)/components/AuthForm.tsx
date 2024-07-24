@@ -1,9 +1,7 @@
 "use client";
-
+import Input from "@/app/components/inputs/input";
 import { useCallback, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import { CgPassword } from "react-icons/cg";
-import { TbVariableMinus } from "react-icons/tb";
 
 type Variant = "LOGIN" | "REGISTER";
 
@@ -43,7 +41,36 @@ const AuthForm = () => {
     }
   };
 
-  return <div>Auth Form2!</div>;
+  const socialAction = (action: string) => {
+    setIsLoading(true);
+    //nextAuth social sign in
+  };
+
+  return (
+    <div
+      className="
+  mt-8
+  sm:mx-auto
+  sm:w-full
+  sm:max-w-md
+  "
+    >
+      <div
+        className="
+bg-white
+px-4
+py-8
+shadow
+sm:rounded-lg
+sm:px-10
+"
+      >
+        <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
+          <Input />
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default AuthForm;
